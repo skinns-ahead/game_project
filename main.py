@@ -223,6 +223,8 @@ class Player(pygame.sprite.Sprite):
                     platform.kill()
                 for end in finish:
                     end.kill()
+                for ch in chests:
+                    ch.kill()
                 load_lvl()
                 self.heart_count = 3
                 self.coins_count = 0
@@ -328,7 +330,7 @@ class Chest(pygame.sprite.Sprite):
     def update(self):
         # Если сундук открыли меняем картинку
         if not self.is_closed:
-            self.image = pygame.image.load('chest/open_chest.png')
+            self.image = pygame.image.load('objects/chest/open_chest.png')
 
 
 # Класс индикаторов для вывода информации о счете и тд
